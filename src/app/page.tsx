@@ -16,7 +16,7 @@ export default function Home() {
             Portland, Maine
           </p>
           <p className="text-coral-600 font-medium mb-12">
-            Popups starting late winter 2026
+            Popups starting early spring 2026
           </p>
 
           <div className="max-w-xl mx-auto mb-16">

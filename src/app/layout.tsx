@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   title: "Fillet Chalet | Mobile Wood-Fired Sauna | Portland, Maine",
   description:
-    "Mobile wood-fired sauna in Portland, Maine. Public sessions, private rentals, and special events. Popups starting late winter 2026.",
+    "Mobile wood-fired sauna in Portland, Maine. Public sessions, private rentals, and special events. Popups starting early spring 2026.",
   keywords: [
     "mobile sauna",
     "wood-fired sauna",
