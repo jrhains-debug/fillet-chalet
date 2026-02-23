@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useRef, useEffect } from "react";
 
 const navLinks = [
@@ -31,8 +32,15 @@ export default function Header() {
       <nav className="max-w-5xl mx-auto px-6">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="font-display text-xl text-slate-900 hover:text-coral-600 transition-colors">
-            Fillet Chalet
+          <Link href="/" className="hover:opacity-80 transition-opacity">
+            <Image
+              src="/logo.svg"
+              alt="Fillet Chalet"
+              width={120}
+              height={60}
+              className="h-12 w-auto"
+              priority
+            />
           </Link>
 
           {/* Desktop Navigation */}
