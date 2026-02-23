@@ -1,136 +1,99 @@
+import Link from 'next/link'
+
 export default function BookPage() {
   return (
-    <div className="texture-overlay">
-      <section className="section-padding">
-        <div className="container-narrow">
-          <h1 className="heading-section text-center mb-12">
-            Book Your Session
+    <main className="overflow-x-hidden">
+
+      <section className="relative pt-40 pb-20 bg-pitch">
+        <div className="absolute bottom-0 left-0 w-[400px] h-[300px] bg-ember/8 rounded-full blur-[100px] pointer-events-none" />
+        <div className="relative max-w-6xl mx-auto px-6">
+          <p className="font-display text-xs font-medium tracking-[0.2em] uppercase text-ember mb-4">Book</p>
+          <h1 className="font-display font-black text-cream"
+              style={{ fontSize: 'clamp(2.5rem, 6vw, 5rem)', letterSpacing: '-0.03em', lineHeight: '1.0' }}>
+            Book a session.
           </h1>
+        </div>
+      </section>
 
-          {/* Session Types & Pricing */}
-          <div className="mb-12">
-            <h2 className="heading-subsection mb-6">Session Types &amp; Pricing</h2>
+      <div className="h-px bg-gradient-to-r from-transparent via-ash to-transparent" />
 
-            <div className="space-y-4">
-              <div className="card">
-                <div className="flex justify-between items-start">
-                  <div>
-                    <h3 className="font-semibold text-slate-900">Public Sessions</h3>
-                    <p className="text-slate-600 text-sm mt-1">75 minutes</p>
-                  </div>
-                  <span className="text-coral-600 font-semibold">$25 per person</span>
-                </div>
+      <section className="py-24 bg-coal">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+            <div className="bg-pitch border border-ash/50 p-10 hover:border-ember/40 transition-colors duration-300">
+              <span className="font-display text-ember text-xs font-medium tracking-[0.2em] uppercase block mb-3">Intro Session</span>
+              <div className="mb-5">
+                <span className="font-display text-5xl font-bold text-cream">$20</span>
+                <span className="font-body text-driftwood text-base ml-2">per person</span>
               </div>
-
-              <div className="card">
-                <div className="flex justify-between items-start">
-                  <div>
-                    <h3 className="font-semibold text-slate-900">Private Rental</h3>
-                    <p className="text-slate-600 text-sm mt-1">2 hours at popup location</p>
-                  </div>
-                  <span className="text-coral-600 font-semibold">$250</span>
-                </div>
-              </div>
-
-              <div className="card">
-                <div className="flex justify-between items-start">
-                  <div>
-                    <h3 className="font-semibold text-slate-900">Overnight Rental</h3>
-                    <p className="text-slate-600 text-sm mt-1">House or rental property</p>
-                  </div>
-                  <a href="mailto:info@filletchalet.com" className="link text-sm">
-                    Email for details
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Session Formats */}
-          <div className="mb-12">
-            <h2 className="heading-subsection mb-6">Session Formats</h2>
-
-            <div className="grid sm:grid-cols-3 gap-4">
-              <div className="card text-center">
-                <h3 className="font-semibold text-slate-900 mb-2">Co-ed</h3>
-                <p className="text-slate-600 text-sm">Clothing mandatory</p>
-              </div>
-
-              <div className="card text-center">
-                <h3 className="font-semibold text-slate-900 mb-2">Gendered</h3>
-                <p className="text-slate-600 text-sm">Clothing optional</p>
-              </div>
-
-              <div className="card text-center">
-                <h3 className="font-semibold text-slate-900 mb-2">Queer</h3>
-                <p className="text-slate-600 text-sm">Clothing optional</p>
-              </div>
+              <p className="font-body text-parchment text-base leading-relaxed mb-2">40 minutes · Up to 6 guests</p>
+              <p className="font-body text-parchment text-lg leading-relaxed mb-8">
+                Two good rounds and a cool-down break. The right way to try this for the first time. It lowers the barrier — most people come back for the full session.
+              </p>
+              <Link href="/book/public" className="btn-primary">Book Intro</Link>
             </div>
 
-            <p className="text-slate-500 text-sm mt-4">
-              Clothing must always be worn outside the sauna itself. No sexual activity allowed.
-            </p>
-          </div>
-
-          {/* Cal.com Embed Section */}
-          <div className="mb-12">
-            <h2 className="heading-subsection mb-6">Select a Time</h2>
-
-            {/*
-              CAL.COM INTEGRATION INSTRUCTIONS:
-
-              1. Create a Cal.com account at https://cal.com
-              2. Set up your event types for each session format
-              3. Install the Cal.com embed package:
-                 npm install @calcom/embed-react
-
-              4. Replace the placeholder below with:
-
-                 import Cal, { getCalApi } from "@calcom/embed-react";
-                 import { useEffect } from "react";
-
-                 Then in your component:
-
-                 useEffect(() => {
-                   (async function () {
-                     const cal = await getCalApi();
-                     cal("ui", {
-                       theme: "light",
-                       styles: { branding: { brandColor: "#f94565" } },
-                     });
-                   })();
-                 }, []);
-
-                 <Cal
-                   calLink="your-username/session-type"
-                   style={{ width: "100%", height: "100%", overflow: "scroll" }}
-                   config={{ layout: "month_view" }}
-                 />
-
-              5. For Stripe payment integration:
-                 - Connect your Stripe account in Cal.com settings
-                 - Enable "Require payment" on each event type
-                 - Set the price for each session type
-
-              More info: https://cal.com/docs/integrations/embed
-            */}
-
-            <div className="card bg-slate-50 border-dashed">
-              <div className="text-center py-12">
-                <p className="text-slate-500 mb-2">Calendar booking integration will be added here using Cal.com</p>
-                <p className="text-slate-400 text-sm">See code comments for setup instructions</p>
+            <div className="bg-pitch border border-ash/50 p-10 hover:border-ember/40 transition-colors duration-300">
+              <span className="font-display text-ember text-xs font-medium tracking-[0.2em] uppercase block mb-3">Standard Session</span>
+              <div className="mb-5">
+                <span className="font-display text-5xl font-bold text-cream">$30</span>
+                <span className="font-body text-driftwood text-base ml-2">per person</span>
               </div>
+              <p className="font-body text-parchment text-base leading-relaxed mb-2">75 minutes · Up to 6 guests</p>
+              <p className="font-body text-parchment text-lg leading-relaxed mb-8">
+                The full experience. Co-ed, women-only, and queer sessions available — check the calendar for upcoming dates and formats.
+              </p>
+              <Link href="/book/public" className="btn-primary">See Schedule</Link>
             </div>
-          </div>
 
-          {/* Payment Note */}
-          <div className="text-center">
-            <p className="text-slate-600">
-              All sessions require payment at time of booking.
+            <div className="bg-pitch border border-ash/50 p-10 hover:border-ember/40 transition-colors duration-300">
+              <span className="font-display text-ember text-xs font-medium tracking-[0.2em] uppercase block mb-3">Private Rental</span>
+              <div className="mb-5">
+                <span className="font-display text-5xl font-bold text-cream">$175</span>
+                <span className="font-body text-driftwood text-base ml-2">flat rate</span>
+              </div>
+              <p className="font-body text-parchment text-base leading-relaxed mb-2">75 minutes · Exclusive use at Bug Light</p>
+              <p className="font-body text-parchment text-lg leading-relaxed mb-8">
+                Your group, your session. Up to six people. Good for couples, small celebrations, and people who just want the place to themselves.
+              </p>
+              <Link href="/book/private" className="btn-primary">Book Private</Link>
+            </div>
+
+            <div className="bg-pitch border border-ash/50 p-10 hover:border-ember/40 transition-colors duration-300">
+              <span className="font-display text-ember text-xs font-medium tracking-[0.2em] uppercase block mb-3">Overnight Delivery</span>
+              <div className="mb-5">
+                <span className="font-display text-5xl font-bold text-cream">$500</span>
+                <span className="font-body text-driftwood text-base ml-2">/ ~18 hrs</span>
+              </div>
+              <p className="font-body text-parchment text-base leading-relaxed mb-2">Delivered to your property</p>
+              <p className="font-body text-parchment text-lg leading-relaxed mb-8">
+                We deliver the sauna to your waterfront, campsite, or backyard. Yours for the night — fire it up yourself, go home when you're done.
+              </p>
+              <Link href="/contact" className="btn-ghost">Get in Touch</Link>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <div className="h-px bg-gradient-to-r from-transparent via-ash to-transparent" />
+
+      <section className="py-24 bg-pitch">
+        <div className="max-w-6xl mx-auto px-6">
+          <p className="font-display text-xs font-medium tracking-[0.2em] uppercase text-ember mb-4">Calendar</p>
+          <h2 className="font-display font-bold text-cream mb-12"
+              style={{ fontSize: 'clamp(1.8rem, 3vw, 2.8rem)', letterSpacing: '-0.02em', lineHeight: '1.1' }}>
+            Check availability.
+          </h2>
+          <div className="border border-ash/50 p-12 text-center">
+            <p className="font-body text-driftwood text-lg italic">
+              Booking calendar coming soon — sessions open for reservation in early spring 2026.
             </p>
           </div>
         </div>
       </section>
-    </div>
-  );
+
+    </main>
+  )
 }
